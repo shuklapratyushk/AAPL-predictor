@@ -1,0 +1,28 @@
+paths:
+  raw_data: "../data/raw/"
+  processed_data: "../data/processed/AAPL_features.csv"
+  models: "../outputs/models/"
+  outputs: "../outputs/"
+
+model:
+  name: "RandomForestClassifier"
+  version: "full"
+  file: "AAPL_rf_model.joblib"
+
+features:
+  - SMA_20
+  - EMA_50
+  - Daily_Return
+  - Lag_1
+
+
+training:
+  test_size: 0.2
+  shuffle: false
+  random_state: 42
+
+prediction:
+  ticker: "AAPL"
+  start_date: "2025-01-01"
+  end_date: "2025-12-31"
+  threshold: 0.5  
